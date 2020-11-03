@@ -1,0 +1,24 @@
+#+TITLE: MY Emacs DOOM conf
+
+This repo is a module of my [[https://github.com/davoodeh/.files][.files]] repo.
+
+An Emacs config from a noob for noobs.
+
+It's a [[https://github.com/hlissner/doom-emacs][DOOM]] config focused on Persian/bidi, LaTeX and Org support.
+
+To install just clone my [[https://github.com/davoodeh/.files][.files]] in your home or clone this repo in your =$DOOMDIR=
+(in my config: =~/.config/doom.d=) (default: =~/.doom.d=) and install DOOM by cloning and running it.
+The summary is:
+
+#+BEGIN_SRC sh
+cd
+git clone https://github.com/davoodeh/doom.d .doom.d
+git clone https://github.com/hlissner/emacs-doom .emacs.d
+.emacs.d/bin/doom install
+#+END_SRC
+
+P.S for Iranian fellas: Some Emacs packages are hosted on GitLab which means you should change your DNS/IP before running ~doom~.
+Otherwise it might fail.
+
+-----
+Yet figuring it out!
