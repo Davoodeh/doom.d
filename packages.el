@@ -10,3 +10,4 @@
 (package! gist :disable t)
 (package! selectric-mode)
 (package! theme-magic)
+(package! org-ref)

@@ -3,15 +3,23 @@
 ;;; This file loads configs and is the home to general Emacs configs.
 ;;; Other configs have their own files or are in +misc.el.
 ;;; Plugins are small configs that may not be needed from time to time.
+;;; Variables are isolated, there is no need to edit them one by one and can be done in this file.
 
+;;; -----
+;;; Necessary helper functions and variables
 (load! "+helpers")
+;;; -----
 
-(setq mono-font "Iosevka")
+;;; -----
+;; Config specific optional variable
+;; (setq bib-files "~/.local/share/bib.bib")
+;; (setq mono-font "Iosevka")
+;;; -----
 
 (custom-set-variables
  '(auto-insert-query nil)
  '(bidi-paragraph-direction nil) ; ensures Emacs' default behaviour
- '(doom-font (font-spec :family mono-font :size 16 :inherit '(italic bold)))
+ '(doom-font (font-spec :family (or mono-font "mono") :size 16 :inherit '(italic bold)))
  ;; '(line-spacing 8)
  '(display-line-number t)
  '(display-line-numbers-type 'relative)
@@ -27,16 +35,20 @@
 (auto-save-visited-mode)
 ;;; -----
 
+;;; -----
+;;; Extra config and files
 (load-dir "skeletons")
 (plugin "+visuals")
-(when (featurep! :lang latex)
-  (plugin "+xetex")
-  (plugin "+minted"))
-(when (featurep! :tools format)
-  (plugin "+format"))
 (when (featurep! :lang org)
   (load! "+org"))
+(when (featurep! :lang latex)
+  (plugin "+xetex")
+  (plugin "+minted")
+  (plugin "+ox-latex-patches"))
+(when (featurep! :editor format)
+  (plugin "+format"))
 (load! "+misc")
+;;; -----
 
 ;;; -----
 ;;; Binds

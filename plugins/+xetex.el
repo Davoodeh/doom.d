@@ -18,4 +18,11 @@
 (after! ox-latex
         (setq org-latex-compiler "xelatex")
         (add-to-list 'org-latex-packages-alist '("pass" "geometry")) ; this prevents buggy page resizes in XeTeX
-        (add-to-list 'org-latex-packages-alist  '("" "fontspec, xpatch, fullpage, caption, float, xcolor, titling")))
+        (dolist (pkg '("fontspec"
+                       "xpatch"
+                       "fullpage"
+                       "caption"
+                       "float"
+                       "xcolor"
+                       "titling"))
+                (add-to-list 'org-latex-packages-alist  (list "" pkg))))

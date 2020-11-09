@@ -1,6 +1,8 @@
 ;;; +helpers.el -*- lexical-binding: t; -*-
 
-(setq auto-insert-alist '())
+(defvar auto-insert-alist '())
+(defvar bib-files '())
+(defvar mono-font nil)
 
 (defun load-dir (dir)
   "Load other dirs relative to DOOMDIR."
