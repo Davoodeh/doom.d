@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: filename
+# --
+#+MACRO: filename (eval (concat "[[file:" (file-name-sans-extension (buffer-name)) \$1 "]]"))

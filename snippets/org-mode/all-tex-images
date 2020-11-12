@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: all-tex-images
+# --
+#+PROPERTY: header-args:latex :exports results :results file graphics replace output :imagemagick yes :iminoptions -density 250 :fit yes

@@ -3,6 +3,7 @@
 (add-hook 'org-mode-hook 'set-bidi-env)
 
 (setq
+ ;; org-startup-folded t
  org-export-with-sub-superscripts nil ; treats underscore as just an underscore
  auto-mode-alist (append '(; opens specific extensions with given modes
                            ("\\.sent\\'" . org-mode)
@@ -27,13 +28,24 @@
 
 (after! ox-latex
         (add-to-list 'org-latex-caption-above 'src-block)
-        (add-to-list 'org-latex-classes '("a4article"
-                                          "\\documentclass[a4paper]{article}\n"
-                                          ("\\section{%s}" . "\\section*{%s}")
-                                          ("\\subsection{%s}" . "\\subsection*{%s}")
-                                          ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                                          ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                                          ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+        (add-to-list 'org-latex-classes '("a4article" "\\documentclass[a4paper]{article}"
+                                                      ("\\section{%s}" . "\\section*{%s}")
+                                                      ("\\subsection{%s}" . "\\subsection*{%s}")
+                                                      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                                                      ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                                                      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+        (add-to-list 'org-latex-classes '("a4report" "\\documentclass[a4paper]{report}"
+                                                     ("\\part{%s}" . "\\part*{%s}")
+                                                     ("\\chapter{%s}" . "\\chapter*{%s}")
+                                                     ("\\section{%s}" . "\\section*{%s}")
+                                                     ("\\subsection{%s}" . "\\subsection*{%s}")
+                                                     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+        (add-to-list 'org-latex-classes '("a4book" "\\documentclass[a4paper]{book}"
+                                                   ("\\part{%s}" . "\\part*{%s}")
+                                                   ("\\chapter{%s}" . "\\chapter*{%s}")
+                                                   ("\\section{%s}" . "\\section*{%s}")
+                                                   ("\\subsection{%s}" . "\\subsection*{%s}")
+                                                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
         (setq
          ;; org-latex-bib-compiler "biber"
          org-latex-default-class "a4article"
