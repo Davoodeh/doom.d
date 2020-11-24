@@ -5,34 +5,16 @@
 :PROPERTIES:
 :VISIBILITY: folded
 :END:
-#+AUTHOR: $0
 
 ** TeX
 # #+OPTIONS: toc:nil;
-# #+LATEX_HEADER: \usepackage{nopageno}
-# #+LATEX_CLASS_OPTIONS: [a5paper]
-# #+LATEX_HEADER: \setmainfont{XB Roya}\setmonofont{Iosevka}
 # #+LATEX_HEADER: \usepackage{titlingpage}
+#+LATEX_HEADER: \def\UrlBreaks{\do\/\do-}
 
 *** Persian
 #+LANGUAGE: fa
-#+LATEX_HEADER: \usepackage{xepersian}\settextfont{XB Roya}\setlatintextfont{XB Roya}\setmonofont{Iosevka}
-# #+LATEX_HEADER: \usepackage{shamsi} \project{} \supervisor{}
+#+LATEX_HEADER: \usepackage{facro}
+# #+LATEX_HEADER: \usepackage{titlingpage1} \project{} \supervisor{}
+# #+LATEX_HEADER: \captionsetup[figure]{labelformat=empty}\captionsetup[table]{labelformat=empty}
 
-#+LATEX_HEADER: \xpretocmd{\tabular}{\begin{latin}}{}{} \xapptocmd{\endtabular}{\end{latin}}{}{}
-#+LATEX_HEADER: \captionsetup[table]{name=جدول}
-
-#+LATEX_HEADER: \setLTRbibitems
-
-**** Minted
-#+LATEX_HEADER: \xpretocmd{\verbatim}{\begin{LTR}}{}{} \xapptocmd{\endverbatim}{\end{LTR}}{}{} \xpretocmd{\minted}{\VerbatimEnvironment\begin{latin}}{}{} \xapptocmd{\endminted}{\end{latin}}{}{}
-#+LATEX_HEADER: \LetLtxMacro{\oldmintinline}{\mintinline}\renewcommand{\mintinline}[3][]{\lr{\oldmintinline[#1]{#2}{#3}}}
-#+LATEX_HEADER: \SetupFloatingEnvironment{listing}{name=کد}
-
-** Macros
-#+MACRO: lr @@latex:\lr{@@​\$1​@@latex:}@@
-#+MACRO: lt @@latex:\lr{@@​~\$1~​@@latex:}@@
-
-** Bibliography
-#+LATEX_HEADER: \def\UrlBreaks{\do\/\do-}
-[[bibliographystyle:unsrtnat]]
+* $0
